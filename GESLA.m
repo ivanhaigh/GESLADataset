@@ -21,7 +21,7 @@ A=importdata(file,' ',headerlength);
 %...Transform time to datenum format 
 date=datenum(A.textdata(headerlength+1:end,1),'yyyy/mm/dd');
 hour=datenum(A.textdata(headerlength+1:end,2),'HH:MM:SS');
-hour=hour-hour(1);
+hour=hour-floor(hour(1));
 dt=date+hour;
 
 %...Read sea level observations 
